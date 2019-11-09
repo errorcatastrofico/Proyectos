@@ -1,0 +1,24 @@
+#que asco me da este codigo
+coL,fila=4,4
+inicialaes,gente=[],["jotas","dios","eve", "mORTO"]
+for y in range (len(gente)):
+    inicialaes.append(gente[y][:1])
+matriz=[[0]*coL for i in range (fila)]
+for t in range ( 0, len (gente)):
+    print(gente[t] ,end='' )
+    h=input(", quien te gusta")
+    for g in range (0,len(inicialaes)):
+        if h.lower()==inicialaes[g]:
+            matriz [t][g]=1
+        else:
+            matriz [t][g]=0
+print("         jotas dios eve morto")
+for f in range (fila):
+    print(gente[f],end='     ')
+    for c in range (coL):
+        print(matriz [f][c],end='     ')
+    print('')
+for f in range (fila):
+    for c in range(coL):
+        if matriz[f][c]==1 and matriz [f][c]==matriz[c][f]and c!=f :
+            print(gente[f] ,'y', gente [c] ,'son compatibles')
